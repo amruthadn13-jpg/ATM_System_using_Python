@@ -1,0 +1,47 @@
+balance = 1000
+
+def check_balance(balance):
+    print("\nAvailable Balance: ₹", balance)
+
+def deposit_cash(balance):
+    amount = int(input("Enter amount to deposit: ₹ "))
+    balance = balance + amount
+    print(" Amount Deposited Successfully!")
+    return balance
+
+def withdraw_cash(balance):
+    amount = int(input("Enter amount to withdraw: ₹ "))
+
+    if amount > balance:
+        print(" Insufficient Balance!")
+    else:
+        balance = balance - amount
+        print(" Withdrawal Successful!")
+
+    return balance
+
+while True:
+
+    print("\nATM Menu")
+    print("1. Check Balance")
+    print("2. Deposit Cash")
+    print("3. Withdraw Cash")
+    print("4. Exit")
+
+    choice = input("Enter your choice (1-4): ")
+
+    if choice == "1":
+        check_balance(balance)
+
+    elif choice == "2":
+        balance = deposit_cash(balance)
+
+    elif choice == "3":
+        balance = withdraw_cash(balance)
+
+    elif choice == "4":
+        print(" Thank you for using ATM!")
+        break
+
+    else:
+        print(" Invalid Choice!")
